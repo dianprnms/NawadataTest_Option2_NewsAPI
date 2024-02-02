@@ -3,7 +3,6 @@ package com.example.nawadatatest_option2_newsapi.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.nawadatatest_option2_newsapi.databinding.ItemCategoryBinding
 import com.example.nawadatatest_option2_newsapi.model.CategoryData
 
@@ -15,7 +14,6 @@ class CategoryAdapter(private var listCategory: List<CategoryData>): RecyclerVie
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(view)
-
     }
 
     override fun getItemCount(): Int {
@@ -27,7 +25,5 @@ class CategoryAdapter(private var listCategory: List<CategoryData>): RecyclerVie
         holder.binding.itemCategory.setOnClickListener{
             onClick!!.invoke(listCategory[position])
         }
-
-
     }
 }

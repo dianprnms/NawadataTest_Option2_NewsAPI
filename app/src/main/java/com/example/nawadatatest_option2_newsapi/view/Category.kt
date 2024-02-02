@@ -18,18 +18,14 @@ import dagger.hilt.android.AndroidEntryPoint
 class Category : Fragment() {
     private lateinit var binding: FragmentCategoryBinding
     private lateinit var categoryAdapter: CategoryAdapter
-
-    // NavController
     private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         binding = FragmentCategoryBinding.inflate(inflater, container, false)
 
-        // Inisialisasi NavController
         navController = findNavController()
 
         val listCategory = arrayListOf(
@@ -51,7 +47,6 @@ class Category : Fragment() {
         categoryAdapter.onClick = { category ->
             val categ = category.name
 
-            // Navigasi ke SourceFragment menggunakan NavController
             val bundle = Bundle().apply {
                 putString("name", categ)
             }

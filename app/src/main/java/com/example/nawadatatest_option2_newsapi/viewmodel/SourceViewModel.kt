@@ -14,33 +14,36 @@ import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
-class SourceViewModel @Inject constructor(private var api: ApiService) : ViewModel() {
-    var liveDataSource: MutableLiveData<List<Source>?> = MutableLiveData()
+class SourceViewModel @Inject constructor(private var api : ApiService) : ViewModel() {
+
+    var liveDataSource : MutableLiveData<List<Source>?> = MutableLiveData()
 
     fun getDataSource(): MutableLiveData<List<Source>?> {
-        return liveDataSource
+        return  liveDataSource
     }
 
-    fun callApiSource(category: String) {
+    fun callApiSource(category : String){
         api.getAllSources(category)
-            .enqueue(object : Callback<ResponseDataSource> {
+            .enqueue(object : Callback<ResponseDataSource>{
                 override fun onResponse(
                     call: Call<ResponseDataSource>,
                     response: Response<ResponseDataSource>
                 ) {
-                    if (response.isSuccessful) {
-                        liveDataSource.postValue(response.body()?.sources)
-                        Log.d(TAG, "onResponse: ${response.body()?.sources?.size}")
-                    } else {
+                    if (response.isSuccessful){
+                        liveDataSource.postValue(response.body()!!.sources)
+                        Log.d(TAG, "onResponse: ${response.body()!!.sources.size}")
+
+                    }else{
                         Log.d(TAG, "onResponse: Unsuccessfully")
-                        liveDataSource.postValue(null)
-                    }
+                        liveDataSource.postValue(null)                    }
                 }
 
                 override fun onFailure(call: Call<ResponseDataSource>, t: Throwable) {
                     Log.d(TAG, "onFailure: ${t.message}")
-                    liveDataSource.postValue(null)
-                }
+                    liveDataSource.postValue(null)                }
+
+
             })
     }
 }
+

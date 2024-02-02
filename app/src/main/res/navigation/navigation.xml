@@ -18,5 +18,22 @@
         android:id="@+id/source"
         android:name="com.example.nawadatatest_option2_newsapi.view.Source"
         android:label="fragment_source"
-        tools:layout="@layout/fragment_source" />
+        tools:layout="@layout/fragment_source" >
+        <action
+            android:id="@+id/action_source_to_article"
+            app:destination="@id/article" />
+        <action
+            android:id="@+id/action_source_to_webviewFragment"
+            app:destination="@id/webviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/article"
+        android:name="com.example.nawadatatest_option2_newsapi.view.Article"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article" />
+    <fragment
+        android:id="@+id/webviewFragment"
+        android:name="com.example.nawadatatest_option2_newsapi.view.WebviewFragment"
+        android:label="fragment_webview"
+        tools:layout="@layout/fragment_webview" />
 </navigation>

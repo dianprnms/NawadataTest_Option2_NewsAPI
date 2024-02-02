@@ -15,14 +15,6 @@ import javax.inject.Singleton
 object NetworkClient {
     private const val  BASE_URL ="https://newsapi.org/v2/"
 
-//    val instance : ApiService by lazy {
-//        val retrofit= Retrofit.Builder()
-//            .baseUrl(BASE_URL)
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .build()
-//        retrofit.create(ApiService::class.java)
-//    }
-
     private val logging : HttpLoggingInterceptor
         get() {
             val httpLoggingInterceptor = HttpLoggingInterceptor()
