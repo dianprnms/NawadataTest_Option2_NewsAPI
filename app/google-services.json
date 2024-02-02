@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1012828903608",
+    "project_id": "newsapi-ae117",
+    "storage_bucket": "newsapi-ae117.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012828903608:android:132bb40a89a2fde2ad7c4d",
+        "android_client_info": {
+          "package_name": "com.example.nawadatatest_option2_newsapi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTiUPAiY2wsAI4WXLYQqr3P6gG090xnWk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
